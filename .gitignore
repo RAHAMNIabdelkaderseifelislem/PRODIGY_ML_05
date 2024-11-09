@@ -1,3 +1,5 @@
+.gradio/
 data/
+lenv/
 venv/
 models/

@@ -22,11 +22,21 @@ import os
 import gradio as gr
 import plotly.graph_objects as go
 import plotly.express as px
-from src.preprocessing import DataPreprocessor
+from src.preprocess import DataPreprocessor
 from src.model import FoodClassifier
 from src.utils import CLASSES, preprocess_image, get_calorie_estimation, format_prediction
+import tensorflow as tf
 import numpy as np
 import pandas as pd
+
+# Check for GPU availability and configure TensorFlow to use GPU if available
+if tf.config.list_physical_devices('GPU'):
+    print("Running on GPU")
+    gpus = tf.config.list_physical_devices('GPU')
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
+else:
+    print("No GPU available, running on CPU")
 
 class FoodRecognitionApp:
     """
@@ -170,7 +180,7 @@ class FoodRecognitionApp:
                     with gr.Row():
                         data_dir = gr.Textbox(
                             label="Data Directory",
-                            value="data/food101",
+                            value="data/images",
                             placeholder="Path to your dataset"
                         )
                         batch_size = gr.Number(
@@ -226,9 +236,9 @@ class FoodRecognitionApp:
                     gr.Markdown("### Example Images")
                     gr.Examples(
                         examples=[
-                            ["examples/apple_pie.jpg"],
-                            ["examples/caesar_salad.jpg"],
-                            ["examples/pizza.jpg"],
+                            ["data/examples/apple_pie.jpg"],
+                            ["data/examples/caesar_salad.jpg"],
+                            ["data/examples/pizza.jpg"],
                         ],
                         inputs=image_input
                     )
@@ -238,4 +248,4 @@ class FoodRecognitionApp:
 if __name__ == "__main__":
     app = FoodRecognitionApp()
     interface = app.create_interface()
-    interface.launch(share=True)
+    interface.launch(share=False)

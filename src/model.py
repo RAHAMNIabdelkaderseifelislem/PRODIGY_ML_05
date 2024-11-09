@@ -11,6 +11,14 @@ from tensorflow.keras.models import Model
 import os
 from .utils import CLASSES
 
+# Check for GPU availability and configure TensorFlow to use GPU if available
+if tf.config.list_physical_devices('GPU'):
+    print("Running on GPU")
+    gpus = tf.config.list_physical_devices('GPU')
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
+else:
+    print("No GPU available, running on CPU")
 class FoodClassifier:
     """
     A utility class to build, train and save a FoodClassifier model.
