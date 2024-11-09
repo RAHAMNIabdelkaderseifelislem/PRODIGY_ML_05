@@ -21,12 +21,14 @@ This exciting project combines computer vision and machine learning to create a 
 
 ### 📂 Project Structure
 ```
-food-recognition/
-├── data_preprocessing.py
-├── model_training.py
-├── calorie_estimation.py
-├── gui.py
-├── utils.py
+/
+├──src/
+    ├── data_preprocessing.py
+    ├── model_training.py
+    ├── calorie_estimation.py
+    ├── gui.py
+    └── utils.py
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
