@@ -28,7 +28,7 @@ This exciting project combines computer vision and machine learning to create a 
     ├── calorie_estimation.py
     ├── gui.py
     └── utils.py
-├── main.py
+├── app.py
 ├── requirements.txt
 └── README.md
 ```
