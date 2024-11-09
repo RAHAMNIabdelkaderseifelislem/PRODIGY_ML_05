@@ -1,5 +1,5 @@
 # 🍕 AI Food Recognition & Calorie Estimation 🥗
-## Task 3 - Prodigy InfoTech ML Internship
+## Task 5 - Prodigy InfoTech ML Internship
 
 ### 🌟 Project Overview
 This exciting project combines computer vision and machine learning to create a powerful food recognition system that not only identifies food items but also estimates their caloric content! Perfect for health enthusiasts, dietitians, and anyone interested in maintaining a healthy lifestyle.
