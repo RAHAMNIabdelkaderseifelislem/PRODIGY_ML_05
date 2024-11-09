@@ -7,3 +7,4 @@ scikit-learn>=0.24.2
 gradio>=3.0.0
 matplotlib>=3.4.3
 tqdm>=4.62.2
+plotly>=5.3.1
